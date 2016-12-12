@@ -13,6 +13,21 @@ products = [
 
 // You're allergic to nuts and mushrooms make you squeamish. Find only those pizzas which you will enjoy.
 
+var ediblePies = [];
+
+for (var i = 0; i < products.length; i++) {
+    if (products[i].containsNuts === false) {
+        hasMushrooms = false;
+        for (var j = 0; j < products[i].ingredients.length; j++) {
+            if (products[i].ingredients[j] === 'mushrooms') {
+                hasMushrooms = true;
+            }
+        }
+        if (!hasMushrooms) ediblePies.push(products[i]);
+    }
+}
+
+
 
 // Add all natural numbers below 1000 that are multiples of 3 or 5
 
